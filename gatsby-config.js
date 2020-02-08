@@ -1,8 +1,12 @@
 const path = require(`path`)
 
 module.exports = {
+  siteMetadata: {
+    title: "Amazing Nodejs",
+  },
   plugins: [
-    `gatsby-plugin-netlify`,
+    `gatsby-plugin-sass`,
+    "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -18,7 +22,12 @@ module.exports = {
         refetchInterval: 60,
       },
     },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
+    "gatsby-plugin-offline",
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `amazingnodejs`,
+      },
+    },
   ],
 }

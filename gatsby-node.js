@@ -1,8 +1,4 @@
 const path = require(`path`)
-const remark = require(`remark`)
-const html = require(`remark-html`)
-const dateformat = require(`dateformat`)
-const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
 const { makeBlogPath } = require(`./src/utils`)
 
 exports.createPages = async ({ actions, graphql }) => {
@@ -40,47 +36,3 @@ exports.createPages = async ({ actions, graphql }) => {
     })
   })
 }
-
-// exports.createResolvers = ({
-//   actions,
-//   cache,
-//   createNodeId,
-//   createResolvers,
-//   store,
-//   reporter,
-// }) => {
-//   const { createNode } = actions
-//   createResolvers({
-//     eZplatform_BlogPost: {
-//       createdAt: {
-//         type: `String`,
-//         resolve(source, args, context, info) {
-//           return dateformat(source.date, `fullDate`)
-//         },
-//       },
-//       post: {
-//         resolve(source, args, context, info) {
-//           return remark()
-//             .use(html)
-//             .processSync(source.post).contents
-//         },
-//       },
-//     },
-//     eZplatform_Asset: {
-//       image: {
-//         type: `File`,
-//         // projection: { url: true },
-//         resolve(source, args, context, info) {
-//           return createRemoteFileNode({
-//             url: 'http://localhost:8000/' + source.uri,
-//             store,
-//             cache,
-//             createNode,
-//             createNodeId,
-//             reporter,
-//           })
-//         },
-//       },
-//     },
-//   })
-// }
