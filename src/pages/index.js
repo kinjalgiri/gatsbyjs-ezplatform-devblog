@@ -25,7 +25,7 @@ const IndexPage = ({ data }) => (
       {data.ezp.content.blogPosts.edges.map((blog, i) => (
           <div key={blog.node._location.id} className="item mb-5">
             <div className="media">
-              <img className="mr-3 img-fluid post-thumb d-none d-md-flex" src={blog.node.image.variation.uri} />
+              <img alt="" className="mr-3 img-fluid post-thumb d-none d-md-flex" src={blog.node.image.variation.uri} />
               <div className="media-body">
               <h3 className="title mb-1">
                 <Link key={i} to={makeBlogPath(blog.node.title)}>{blog.node.title}</Link>

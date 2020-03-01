@@ -1,10 +1,19 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import fontawesome from '@fortawesome/fontawesome'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { 
+  faHome,
+  faUser,
+  faBookmark, 
+} from "@fortawesome/free-solid-svg-icons";
 
-// fontawesome.library.add(faTwitter)
+import { 
+  faGithub,
+  faFacebook,
+  faTwitter, 
+} from "@fortawesome/free-brands-svg-icons";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Header = ({ siteTitle }) => (
   <header className="header text-center">
@@ -24,27 +33,41 @@ const Header = ({ siteTitle }) => (
               <a href="about.html">Find out more about me</a>
             </div>
           <ul className="social-list list-inline py-3 mx-auto">
-                <li className="list-inline-item"><a href="#"><i className="fab fa-linkedin-in fa-fw"></i></a></li>
-                <li className="list-inline-item"><a href="#"><i className="fab fa-linkedin-in fa-fw"></i></a></li>
-                <li className="list-inline-item"><a href="#"><i className="fab fa-github-alt fa-fw"></i></a></li>
-                <li className="list-inline-item"><a href="#"><i className="fab fa-stack-overflow fa-fw"></i></a></li>
-                <li className="list-inline-item"><a href="#"><i className="fab fa-codepen fa-fw"></i></a></li>
+                <li className="list-inline-item">
+                  <a href="/#">
+                    <FontAwesomeIcon icon={faGithub} />
+                  </a>
+                </li>
+                <li className="list-inline-item">
+                  <a href="/#">
+                    <FontAwesomeIcon icon={faFacebook} />
+                  </a>
+                </li>
+                <li className="list-inline-item">
+                  <a href="/#">
+                    <FontAwesomeIcon icon={faTwitter} />
+                  </a>
+                </li>
               </ul>
               <hr/>
         </div>
         <ul className="navbar-nav flex-column text-left">
           <li className="nav-item active">
-            <a className="nav-link" href="index.html"><i className="fas fa-home fa-fw mr-2"></i>Blog Home <span className="sr-only">(current)</span></a>
+            <a className="nav-link" href="/">
+            <FontAwesomeIcon icon={faHome} className="mr-2" />Blog Home <span className="sr-only">(current)</span>
+            </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="blog-post.html"><i className="fas fa-bookmark fa-fw mr-2"></i>Blog Post</a>
+            <a className="nav-link" href="blog-post.html">
+            <FontAwesomeIcon icon={faBookmark} className="mr-2" />Blog Post</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="about.html"><i className="fas fa-user fa-fw mr-2"></i>About Me</a>
+            <a className="nav-link" href="about.html">
+              <FontAwesomeIcon icon={faUser} className="mr-2" />About Me</a>
           </li>
         </ul>
         <div className="my-2 my-md-3">
-          <a className="btn btn-primary" href="https://themes.3rdwavemedia.com/" target="_blank">Get in Touch</a>
+          <a className="btn btn-primary" href="https://themes.3rdwavemedia.com/" target="_blank" rel="noopener noreferrer" >Get in Touch</a>
         </div>
       </div>
     </nav>
